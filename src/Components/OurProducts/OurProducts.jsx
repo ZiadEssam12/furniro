@@ -111,7 +111,7 @@ export default function OurProducts() {
         </div>
       </div>
       <div className="flex justify-center">
-        <Button textColor="[--gold]" border width="40">
+        <Button textColor="[--gold]" border px="px-12" py="py-2" mt="mt-4">
           Show More
         </Button>
       </div>

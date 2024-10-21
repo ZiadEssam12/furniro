@@ -1,18 +1,18 @@
 export function Button({
   bgColor = "white",
   textColor = "[--gold]",
-  width = "40",
-  height = "10",
+  px = "px-10",
+  py = "py-2",
   border = false,
-  mt = "7",
+  mt = "mt-7",
   children,
 }) {
   return (
     <button
       href="#"
-      className={`text-${textColor} bg-${bgColor} font-semibold w-${width} h-${height} ${
+      className={`text-${textColor} bg-${bgColor} font-semibold ${px} ${py} ${mt} inline-block hover:bg-${textColor} transition-colors duration-300 hover:text-${bgColor} ${
         border ? "border border-[--gold]" : ""
-      }  mt-${mt} inline-block hover:bg-${textColor} transition-colors duration-300 hover:text-${bgColor}`}
+      }`}
     >
       {children}
     </button>

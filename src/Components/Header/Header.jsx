@@ -31,7 +31,7 @@ function classNames(...classes) {
 export default function Header() {
   return (
     <>
-      <Disclosure as="nav" className="fixed top-0 bg-white z-20 w-full">
+      <Disclosure as="nav" className="fixed top-0 bg-white z-40 w-full">
         <div className="mx-auto px-2 sm:px-6 lg:px-8 bg-white fixed top-0 z-10 w-full">
           <div className="relative flex items-center justify-between h-fit py-3 md:h-[100px] max-w-[95dvw]">
             <div className="inset-y-0 left-0 flex items-center sm:hidden">

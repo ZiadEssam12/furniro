@@ -1,30 +1,32 @@
 import React from "react";
 import { Button } from "../ReusableComponenets/ReusableComponenets";
+import { RoomSlider } from "../Slider/RoomSlider";
 
 export default function RoomGallerySlider() {
   return (
     <>
       {/* escape container kevin powel https://www.youtube.com/watch?v=Ivk8Blw2VTI */}
       {/* https://github.com/LucidNinja/tailwind-container-break-out */}
-      <div className="bg-[--floral-white]">
-        <div className="container grid grid-cols-1 md:grid-cols-3 mx-auto h-[70vh]">
-          <div className="col-span-1 place-self-center">
-            <h4 className="font-bold text-[40px] leading-[45px] text-[#3A3A3A]">
+      <div className="bg-[--floral-white] w-screen">
+        <div className="container flex justify-center mx-auto h-fit w-full  md:h-[80vh] py-8 ">
+          <div className=" lg:w-[35%] md:w-[48%] self-center justify-self-center  px-10 md:px-0">
+            <h4 className="font-bold text-[30px] leading-[45px] text-[#3A3A3A] md:text-[40px]">
               50+ Beautiful rooms inspiration
             </h4>
-            <p className="my-4">
-              Our designer already made a lot of beautiful <br /> prototype of
-              rooms that inspire you
+            <p className="my-4 font-medium">
+              Our designer already made a lot of beautiful
+              <div className="hidden md:inline">
+                <br />
+              </div>{" "}
+              prototype of rooms that inspire you
             </p>
 
             <Button bgColor="[--gold]" textColor="white" mt="0">
               Explore More
             </Button>
           </div>
-          <div className="mr-break-out col-span-2 hidden md:block ">
-            <p>
-              This div will expand beyond the container on the right hand side.
-            </p>
+          <div className="mr-break-out flex-grow hidden md:block">
+            <RoomSlider />
           </div>
         </div>
       </div>
