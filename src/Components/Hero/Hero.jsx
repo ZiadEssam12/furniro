@@ -13,8 +13,6 @@ export default function Hero() {
         // backgroundRepeat: "no-repeat",
       }}
     >
-      <Header />
-
       <div className="bg-[--light-pink] w-4/5  md:w-[643px] h-[443px] rounded-[10px] absolute right-1/2 translate-x-1/2 md:translate-x-0 md:right-10 bottom-32 px-10 pt-20">
         <div className="md:w-[561px] md:h-[344px]">
           <p className="text-black font-semibold tracking-[3px]">New Arrival</p>

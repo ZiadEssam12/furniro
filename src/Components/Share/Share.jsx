@@ -11,6 +11,7 @@ export default function Share() {
       </h1>
 
       <img
+        loading="lazy"
         src={bgImage}
         alt=""
         className="-top-0 md:-top-8 relative w-full select-none	"

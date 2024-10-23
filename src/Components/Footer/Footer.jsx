@@ -53,11 +53,73 @@
 //   );
 // }
 
-import React from "react";
+import React, { useContext } from "react";
+import { CustomerSupport, Guarantee, Shopping, Trophy } from "../Icons";
+import { ExtendedFooterContext } from "../Context/ExtendedFooterContext";
 
 export default function Footer() {
+  const { ExtendedFooter, setExtendedFooter } = useContext(
+    ExtendedFooterContext
+  );
   return (
     <>
+      {ExtendedFooter && (
+        <div className="h-fit  md:h-[270px] py-10 md:py-0 bg-[#FAF3EA] flex flex-col md:flex-row gap-y-4  items-center px-0  md:px-10">
+          <div className="flex gap-x-1 flex-col md:flex-row justify-center items-center text-center md:text-start  w-full md:w-1/4 ">
+            <div className=" ">
+              <Trophy />
+            </div>
+            <div className="">
+              <h5 className="text-[20px] md:text-[25px] font-semibold text-[#242424]">
+                High Quality
+              </h5>
+              <p className="text-[#898989] font-medium text-xl">
+                crafted from top materials
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-x-1 flex-col md:flex-row justify-center items-center text-center md:text-start  w-full md:w-1/4 ">
+            <div className="">
+              <Guarantee />
+            </div>
+            <div className="">
+              <h5 className="text-[20px] md:text-[25px]  font-semibold text-[#242424]">
+                Warranty Protection
+              </h5>
+              <p className="text-[#898989] font-medium text-xl">
+                Over 2 years{" "}
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-x-1 flex-col md:flex-row justify-center items-center text-center md:text-start  w-full md:w-1/4 ">
+            <div>
+              <Shopping />
+            </div>
+            <div>
+              <h5 className="text-[20px] md:text-[25px]  font-semibold text-[#242424]">
+                Free Shipping
+              </h5>
+              <p className="text-[#898989] font-medium text-xl">
+                Order over 150 ${" "}
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-x-1 flex-col md:flex-row justify-center items-center text-center md:text-start  w-full md:w-1/4 ">
+            <div>
+              <CustomerSupport />
+            </div>
+            <div>
+              <h5 className="text-[20px] md:text-[25px]  font-semibold text-[#242424]">
+                24 / 7 Support
+              </h5>
+              <p className="text-[#898989] font-medium text-xl">
+                Dedicated support{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className=" mx-auto border-t-2 py-10 h-[505px] flex flex-col justify-between font-medium px-10 lg:px-0">
         <div className="grid grid-cols-2 md:grid-cols-6 mb-8  gap-y-16 gap-x-10 px-6 md:px-0 md:gap-y-0  container mx-auto">
           <div className="col-span-1 md:col-span-2 order-1">

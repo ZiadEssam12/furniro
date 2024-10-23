@@ -19,6 +19,7 @@ export default function ProductListing({ product }) {
       >
         <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
           <img
+            loading="lazy"
             alt={product.imageAlt}
             src={product.imageSrc}
             className="h-full w-full"

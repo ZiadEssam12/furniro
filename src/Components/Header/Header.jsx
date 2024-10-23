@@ -17,9 +17,10 @@ import {
   AntDesignShoppingCartOutlined,
 } from "../Icons";
 import Hero from "../Hero/Hero";
+import { Link } from "react-router-dom";
 const navigation = [
-  { name: "Home", href: "#", current: false },
-  { name: "Shop", href: "#", current: false },
+  { name: "Home", href: "/", current: false },
+  { name: "Shop", href: "/shop", current: false },
   { name: "About", href: "#", current: false },
   { name: "Contact", href: "#", current: false },
 ];
@@ -50,22 +51,27 @@ export default function Header() {
               </DisclosureButton>
             </div>
             <div className="flex flex-shrink-0 items-center ">
-              <img alt="furniro" src={logo} className="h-8 w-auto" />
+              <img
+                loading="lazy"
+                alt="furniro"
+                src={logo}
+                className="h-8 w-auto"
+              />
               <p className="font-bold text-xl lg:text-[34px] ml-1">Furniro</p>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-[0px] lg:space-x-[35px]">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     aria-current={item.current ? "page" : undefined}
                     className={classNames(
                       "text-black hover:bg-[--gold] hover:text-white rounded-md px-3  py-2  font-medium transition-colors duration-150"
                     )}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

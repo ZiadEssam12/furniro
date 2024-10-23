@@ -10,6 +10,7 @@ export function RoomSlider() {
         <div className="w-[48%] bg-green-900 relative">
           <div>
             <img
+              loading="lazy"
               src={img1}
               alt="rectangle 24 image"
               className="h-full w-full object-cover relative"
@@ -34,6 +35,7 @@ export function RoomSlider() {
         <div className=" w-[48%] relative flex flex-col justify-between">
           <div className="h-[80%]">
             <img
+              loading="lazy"
               src={img2}
               alt="rectangle 24 image"
               className="h-full w-full object-cover"
@@ -50,6 +52,7 @@ export function RoomSlider() {
         </div>
         <div className="bg-blue-900 flex-gorw  h-[90%]">
           <img
+            loading="lazy"
             src={img3}
             alt="rectangle 24 image"
             className="h-full w-full object-cover"

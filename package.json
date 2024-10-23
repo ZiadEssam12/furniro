@@ -12,6 +12,7 @@
     "embla-carousel-react": "^8.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.2",
     "tailwind-container-break-out": "^2.0.9",
