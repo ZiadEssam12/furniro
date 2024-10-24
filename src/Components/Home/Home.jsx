@@ -14,11 +14,9 @@ export default function Home() {
   const { setExtendedFooter } = useContext(ExtendedFooterContext);
 
   useEffect(() => {
-    console.log("Component mounted");
     setExtendedFooter(false);
 
     return () => {
-      console.log("Component unmounted");
       setExtendedFooter(true);
     };
   }, []);

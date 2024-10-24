@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   AkarIconsFacebookFill,
@@ -12,7 +12,13 @@ import img1 from "../../assets/Outdoor sofa set 2.png";
 import img2 from "../../assets/Outdoor sofa set_2 1.png";
 import img3 from "../../assets/Stuart sofa 1.png";
 import img4 from "../../assets/Maya sofa three seater (1) 1.png";
+import sofaLarge1 from "../../assets/Cloud sofa three seater + ottoman_1 1.png";
+import sofaLarge2 from "../../assets/Cloud sofa three seater + ottoman_2 1.png";
 import asgardSofa from "../../assets/Asgaard sofa 3.png";
+import { ExtendedFooterContext } from "../Context/ExtendedFooterContext";
+import { ProductsContext } from "../Context/ProductsContext";
+import { Button } from "../ReusableComponenets/ReusableComponenets";
+import ProductListing from "../ProductListing/ProductListing";
 
 const product = {
   sizes: [
@@ -35,6 +41,18 @@ export default function ProductInfo() {
   const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [productQuantity, setProductQuantity] = useState(1);
+  const { products } = useContext(ProductsContext);
+  const relatedProducts = products.slice(0, 4);
+  const { setExtendedFooter } = useContext(ExtendedFooterContext);
+
+  useEffect(() => {
+    setExtendedFooter(false);
+
+    return () => {
+      setExtendedFooter(true);
+    };
+  }, []);
+
   return (
     <>
       <div id="productInfo">
@@ -285,6 +303,76 @@ export default function ProductInfo() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Full Product Description  */}
+        <div className="py-12 border-y-[1px] border-[#D9D9D9]">
+          <div className="w-[90vw] mx-auto md:container ">
+            <div className="flex justify-between md:justify-center items-center gap-x-0 md:gap-x-8 text-lg md:text-2xl ">
+              <h5 className="font-medium">Description</h5>
+              <h5 className="text-[#9F9F9F]">Additional Information</h5>
+              <h5 className="text-[#9F9F9F]">Reviews [5]</h5>
+            </div>
+
+            {/* text */}
+            <div className="w-4/5 mx-auto text-[#9F9F9F] my-10">
+              <p>
+                Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn
+                portable active stereo speaker takes the unmistakable look and
+                sound of Marshall, unplugs the chords, and takes the show on the
+                road.
+              </p>
+              <p className="mt-6">
+                Weighing in under 7 pounds, the Kilburn is a lightweight piece
+                of vintage styled engineering. Setting the bar as one of the
+                loudest speakers in its class, the Kilburn is a compact,
+                stout-hearted hero with a well-balanced audio which boasts a
+                clear midrange and extended highs for a sound that is both
+                articulate and pronounced. The analogue knobs allow you to fine
+                tune the controls to your personal preferences while the
+                guitar-influenced leather strap enables easy and stylish travel.
+              </p>
+            </div>
+
+            <div className="flex flex-col md:flex-row gap-y-6 justify-center items-center gap-x-[29px]  h-fit md:h-[348px]">
+              <div className="bg-[--linen] rounded-[10px] w-full md:w-[605px] h-full">
+                <img
+                  src={sofaLarge2}
+                  alt="Cloud sofa three seater + ottoman 1"
+                  className="size-full"
+                />
+              </div>
+              <div className="bg-[--linen] rounded-[10px] w-full md:w-[605px]  h-full">
+                <img
+                  src={sofaLarge1}
+                  alt=" Cloud sofa three seater + ottoman 2"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* related prodicts */}
+        <div className="container py-12">
+          <h5 className="font-medium text-4xl text-center">Related Products</h5>
+          <div className="my-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 w-3/4 md:w-full mx-auto">
+            {relatedProducts.map((product) => (
+              <ProductListing key={product.id} product={product} />
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <Link to="/shop">
+              <Button
+                textColor="[--gold]"
+                border
+                px="px-12"
+                py="py-2"
+                mt="mt-4"
+              >
+                Show More
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
