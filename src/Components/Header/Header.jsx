@@ -18,6 +18,8 @@ import {
 } from "../Icons";
 import Hero from "../Hero/Hero";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Cart from "../Cart/Cart";
 const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Shop", href: "/shop", current: false },
@@ -30,6 +32,8 @@ function classNames(...classes) {
 }
 
 export default function Header() {
+  const [openModal, setopenModal] = useState(false);
+
   return (
     <>
       <Disclosure as="nav" className="fixed top-0 bg-white z-40 w-full">
@@ -76,20 +80,31 @@ export default function Header() {
               </div>
             </div>
             <div className="inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              {[
-                <MdiAccountAlertOutline />,
-                <AkarIconsSearch />,
-                <AkarIconsHeart />,
-                <AntDesignShoppingCartOutlined />,
-              ].map((icon, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  className="relative rounded-md ml-1 p-2 focus:outline-none transition-colors duration-150 text-black hover:bg-[--gold] hover:text-white "
-                >
-                  {icon}
-                </button>
-              ))}
+              <button
+                type="button"
+                className="relative rounded-md ml-1 p-2 focus:outline-none transition-colors duration-150 text-black hover:bg-[--gold] hover:text-white "
+              >
+                <MdiAccountAlertOutline />
+              </button>
+              <button
+                type="button"
+                className="relative rounded-md ml-1 p-2 focus:outline-none transition-colors duration-150 text-black hover:bg-[--gold] hover:text-white "
+              >
+                <AkarIconsSearch />
+              </button>
+              <button
+                type="button"
+                className="relative rounded-md ml-1 p-2 focus:outline-none transition-colors duration-150 text-black hover:bg-[--gold] hover:text-white "
+              >
+                <AkarIconsHeart />
+              </button>
+              <button
+                type="button"
+                className="relative rounded-md ml-1 p-2 focus:outline-none transition-colors duration-150 text-black hover:bg-[--gold] hover:text-white "
+                onClick={() => setopenModal(true)}
+              >
+                <AntDesignShoppingCartOutlined />
+              </button>
             </div>
           </div>
         </div>
@@ -112,6 +127,7 @@ export default function Header() {
           </div>
         </DisclosurePanel>
       </Disclosure>
+      <Cart openModal={openModal} closeModal={setopenModal} />
     </>
   );
 }
