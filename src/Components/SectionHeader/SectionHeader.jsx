@@ -1,6 +1,7 @@
 import React from "react";
 import bgImage from "../../assets/Rectangle 1 blurred.png";
 import { DashiconsArrowDownAlt2 } from "../Icons";
+import { Link } from "react-router-dom";
 export default function SectionHeader({ title }) {
   return (
     <>
@@ -15,9 +16,9 @@ export default function SectionHeader({ title }) {
       >
         <h3 className="font-medium text-5xl">{title}</h3>
         <div className="flex justify-between">
-          <a className="font-medium" href="">
+          <Link to="/" className="font-medium">
             Home
-          </a>
+          </Link>
           <p>
             <DashiconsArrowDownAlt2 />
           </p>

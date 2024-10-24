@@ -9,6 +9,9 @@ module.exports = {
   },
 
   theme: {
+    container: {
+      center: true,
+    },
     extend: {},
   },
   plugins: [require("tailwind-container-break-out")],

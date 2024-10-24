@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import ProductListing from "../ProductListing/ProductListing";
 import { Button } from "../ReusableComponenets/ReusableComponenets";
 import { ProductsContext } from "../Context/ProductsContext";
+import { Link } from "react-router-dom";
 export default function OurProducts() {
   const { products } = useContext(ProductsContext);
 
@@ -22,9 +23,11 @@ export default function OurProducts() {
         </div>
       </div>
       <div className="flex justify-center">
-        <Button textColor="[--gold]" border px="px-12" py="py-2" mt="mt-4">
-          Show More
-        </Button>
+        <Link to="shop">
+          <Button textColor="[--gold]" border px="px-12" py="py-2" mt="mt-4">
+            Show More
+          </Button>
+        </Link>
       </div>
     </div>
   );

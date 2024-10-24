@@ -56,6 +56,7 @@
 import React, { useContext } from "react";
 import { CustomerSupport, Guarantee, Shopping, Trophy } from "../Icons";
 import { ExtendedFooterContext } from "../Context/ExtendedFooterContext";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const { ExtendedFooter, setExtendedFooter } = useContext(
@@ -137,26 +138,23 @@ export default function Footer() {
           </div>
           <div className="col-span-1 order-3 md:order-2">
             <div className="h-10 md:h-20 ">
-              <p
-                href="/"
-                className="font-bold h-[36px] flex items-center  text-[#9F9F9F] w-fit"
-              >
+              <p className="font-bold h-[36px] flex items-center  text-[#9F9F9F] w-fit">
                 Links
               </p>
             </div>
             <div className=" flex flex-col h-full">
-              <a href="/home" className="w-fit">
+              <Link to="/" className="w-fit">
                 Home
-              </a>
-              <a href="/shop" className="w-fit my-[30px]">
+              </Link>
+              <Link to="/shop" className="w-fit my-[30px]">
                 Shop
-              </a>
-              <a href="/about" className="w-fit">
+              </Link>
+              <Link to="/about" className="w-fit">
                 About
-              </a>
-              <a href="/contact" className="w-fit mt-[30px]">
+              </Link>
+              <Link to="/contact" className="w-fit mt-[30px]">
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-span-1 order-4 md:order-3">

@@ -7,6 +7,7 @@ import Home from "./Components/Home/Home";
 import SectionHeader from "./Components/SectionHeader/SectionHeader";
 import Shop from "./Components/Shop/Shop";
 import Layout from "./Components/Layout/Layout";
+import ProductInfo from "./Components/ProductInfo/ProductInfo";
 
 export default function App() {
   let routers = createBrowserRouter([
@@ -17,7 +18,8 @@ export default function App() {
         { path: "/", element: <Home /> },
         { path: "shop", element: <Shop /> },
         {
-          // path :"/about" , element : <About />
+          path: "/product",
+          element: <ProductInfo />,
         },
         {
           // path :"/contact" , element : <contact />

@@ -1,10 +1,46 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { CloseIcon, MaterialSymbolsClose } from "../Icons";
 import sofa from "../../assets/Asgaard sofa 5.png";
 import sofa2 from "../../assets/Asgaard sofa 6.png";
 import { Button } from "../ReusableComponenets/ReusableComponenets";
 import { Link } from "react-router-dom";
 export default function Cart({ openModal, closeModal }) {
+  const cartRef = useRef(null);
+
+  // Handle ESC key press
+  useEffect(() => {
+    const handleEscKey = (e) => {
+      if (e.key === "Escape") {
+        closeModal(false);
+      }
+    };
+
+    if (openModal) {
+      window.addEventListener("keydown", handleEscKey);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleEscKey);
+    };
+  }, [openModal, closeModal]);
+
+  // Handle clicks outside the modal
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (cartRef.current && !cartRef.current.contains(e.target)) {
+        closeModal(false);
+      }
+    };
+
+    if (openModal) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openModal, closeModal]);
+
   return (
     <>
       {/* cart div */}
@@ -15,7 +51,10 @@ export default function Cart({ openModal, closeModal }) {
             : "opacity-0 pointer-events-none"
         } flex justify-end`}
       >
-        <div className="w-[417px] h-[746px] bg-white flex flex-col">
+        <div
+          className="w-[417px] h-[746px] bg-white flex flex-col"
+          ref={cartRef}
+        >
           <div className="w-[85%] mx-auto pt-10">
             {/* header of the cart */}
             <div className="pr-4 flex justify-between items-center relative before:absolute before:bottom-0 before:h-[1px] before:bg-[#D9D9D9] before:w-3/4  pb-10">
@@ -36,7 +75,13 @@ export default function Cart({ openModal, closeModal }) {
               {/* items container */}
               <div className="flex flex-col gap-y-4">
                 {/* item listing */}
-                <div className="flex justify-between items-center">
+                <Link
+                  to={"/product"}
+                  className="flex justify-between items-center"
+                  onClick={() => {
+                    closeModal(false);
+                  }}
+                >
                   {/* item img name price */}
                   <div className="flex justify-between gap-x-8 items-center">
                     {/* item img  */}
@@ -61,8 +106,14 @@ export default function Cart({ openModal, closeModal }) {
                       <MaterialSymbolsClose />
                     </button>
                   </div>
-                </div>
-                <div className="flex justify-between items-center">
+                </Link>
+                <Link
+                  to={"/product"}
+                  onClick={() => {
+                    closeModal(false);
+                  }}
+                  className="flex justify-between items-center"
+                >
                   {/* item img name price */}
                   <div className="flex justify-between gap-x-8 items-center">
                     {/* item img  */}
@@ -91,7 +142,7 @@ export default function Cart({ openModal, closeModal }) {
                       <MaterialSymbolsClose />
                     </button>
                   </div>
-                </div>
+                </Link>
               </div>
 
               {/* Total price */}
