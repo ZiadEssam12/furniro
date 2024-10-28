@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createHashRouter,
+  RouterProvider,
+} from "react-router-dom";
 import ExtendedFooterProvider from "./Components/Context/ExtendedFooterContext";
 import ProductsProvider from "./Components/Context/ProductsContext";
 import Footer from "./Components/Footer/Footer";
@@ -12,7 +16,7 @@ import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 
 export default function App() {
-  let routers = createBrowserRouter([
+  let routers = createHashRouter([
     {
       path: "/",
       element: <Layout />,
