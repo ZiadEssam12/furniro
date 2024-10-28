@@ -13,13 +13,13 @@ export default function RoomGallerySlider() {
             <h4 className="font-bold text-[30px] leading-[45px] text-[#3A3A3A] md:text-[40px]">
               50+ Beautiful rooms inspiration
             </h4>
-            <p className="my-4 font-medium">
+            <div className="my-4 font-medium">
               Our designer already made a lot of beautiful
-              <div className="hidden md:inline">
+              <p className="hidden md:inline">
                 <br />
-              </div>{" "}
+              </p>{" "}
               prototype of rooms that inspire you
-            </p>
+            </div>
 
             <Button bgColor="[--gold]" textColor="white" mt="0">
               Explore More
