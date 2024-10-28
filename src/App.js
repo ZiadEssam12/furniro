@@ -8,6 +8,8 @@ import SectionHeader from "./Components/SectionHeader/SectionHeader";
 import Shop from "./Components/Shop/Shop";
 import Layout from "./Components/Layout/Layout";
 import ProductInfo from "./Components/ProductInfo/ProductInfo";
+import Cart from "./Components/Cart/Cart";
+import Checkout from "./Components/Checkout/Checkout";
 
 export default function App() {
   let routers = createBrowserRouter([
@@ -22,7 +24,12 @@ export default function App() {
           element: <ProductInfo />,
         },
         {
-          // path :"/contact" , element : <contact />
+          path: "/cart",
+          element: <Cart />,
+        },
+        {
+          path: "/checkout",
+          element: <Checkout />,
         },
       ],
     },

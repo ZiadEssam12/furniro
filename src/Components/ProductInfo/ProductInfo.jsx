@@ -193,9 +193,9 @@ export default function ProductInfo() {
                           color.inStock
                             ? "cursor-pointer bg-white text-gray-900 shadow-sm"
                             : "cursor-not-allowed bg-gray-50 text-gray-200",
-                          `bg-[${color.value}]`,
                           "group relative flex items-center justify-center border size-[30px] rounded-full  text-sm font-medium uppercase focus:outline-none data-[focus]:ring-2 data-[focus]:ring-indigo-500 overflow-hidden"
                         )}
+                        style={{ backgroundColor: color.value }}
                       >
                         <span
                           className={`group-data-[checked]:border-2 border-red-900 rounded-full w-full h-full flex items-center justify-center 
@@ -260,11 +260,11 @@ export default function ProductInfo() {
                 </div>
 
                 {/* add to cart button */}
-                <button className="w-[215px] h-full flex items-center justify-center border-[1px] border-black rounded-[10px] text-xl">
+                <button className="w-[150px] md:w-[215px] h-full flex items-center justify-center border-[1px] border-black rounded-[10px] text-sm md:text-xl">
                   Add To Cart
                 </button>
                 {/* compare button */}
-                <button className="w-[215px] h-full flex items-center justify-center border-[1px] border-black rounded-[10px] text-xl">
+                <button className="w-[150px] md:w-[215px] h-full flex items-center justify-center border-[1px] border-black rounded-[10px] text-sm md:text-xl">
                   + Compare
                 </button>
               </div>

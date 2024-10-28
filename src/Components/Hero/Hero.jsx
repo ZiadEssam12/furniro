@@ -13,10 +13,10 @@ export default function Hero() {
         // backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="bg-[--light-pink] w-4/5  md:w-[643px] h-[443px] rounded-[10px] absolute right-1/2 translate-x-1/2 md:translate-x-0 md:right-10 bottom-32 px-10 pt-20">
+      <div className="bg-[--light-pink] w-4/5  md:w-[643px] h-[443px] rounded-[10px] absolute right-1/2 translate-x-1/2 md:translate-x-0 md:right-10 bottom-32 px-10 pt-10 md:pt-20">
         <div className="md:w-[561px] md:h-[344px]">
           <p className="text-black font-semibold tracking-[3px]">New Arrival</p>
-          <h1 className="text-[--gold] text-[2.6rem] leading-[50px] md:text-[52px] font-bold md:leading-[65px]">
+          <h1 className="text-[--gold] text-[2.4rem] leading-[50px] md:text-[52px] font-bold md:leading-[65px]">
             Discover Our{" "}
             <span className="hidden md:inline">
               <br />
@@ -31,7 +31,7 @@ export default function Hero() {
             </span>
             tellus, luctus nec ullamcorper mattis.
           </p>
-          <button className="bg-[--gold] py-[25px] px-[72px] text-white font-bold">
+          <button className="bg-[--gold] w-full px-4 py-2 md:w-fit md:py-[25px] md:px-[72px] text-white font-bold">
             Buy now
           </button>
         </div>

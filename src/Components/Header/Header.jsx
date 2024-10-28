@@ -16,10 +16,12 @@ import {
   MdiAccountAlertOutline,
   AntDesignShoppingCartOutlined,
 } from "../Icons";
+
 import Hero from "../Hero/Hero";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Cart from "../Cart/Cart";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
+
 const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Shop", href: "/shop", current: false },
@@ -127,7 +129,7 @@ export default function Header() {
           </div>
         </DisclosurePanel>
       </Disclosure>
-      <Cart openModal={openModal} closeModal={setopenModal} />
+      <ShoppingCart openModal={openModal} closeModal={setopenModal} />
     </>
   );
 }

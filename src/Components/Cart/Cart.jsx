@@ -1,178 +1,93 @@
-import React, { useEffect, useRef } from "react";
-import { CloseIcon, MaterialSymbolsClose } from "../Icons";
-import sofa from "../../assets/Asgaard sofa 5.png";
-import sofa2 from "../../assets/Asgaard sofa 6.png";
-import { Button } from "../ReusableComponenets/ReusableComponenets";
+import React from "react";
+import SectionHeader from "../SectionHeader/SectionHeader";
 import { Link } from "react-router-dom";
-export default function Cart({ openModal, closeModal }) {
-  const cartRef = useRef(null);
+import img from "../../assets/Asgaard sofa 5.png";
+import { AntDesignDeleteFilled } from "../Icons";
+const cartItems = {
+  items: [
+    {
+      img: "Asgaard sofa 5.png",
+      title: "Asgaard sofa",
+      price: 25000000,
+      quantity: 1,
+      subtotal: 25000000,
+    },
+  ],
+  total: 25000000,
+};
 
-  // Handle ESC key press
-  useEffect(() => {
-    const handleEscKey = (e) => {
-      if (e.key === "Escape") {
-        closeModal(false);
-      }
-    };
-
-    if (openModal) {
-      window.addEventListener("keydown", handleEscKey);
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleEscKey);
-    };
-  }, [openModal, closeModal]);
-
-  // Handle clicks outside the modal
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (cartRef.current && !cartRef.current.contains(e.target)) {
-        closeModal(false);
-      }
-    };
-
-    if (openModal) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [openModal, closeModal]);
-
+export default function Cart() {
   return (
     <>
-      {/* cart div */}
-      <div
-        className={`w-screen h-screen inset-0 fixed top-0 z-50 bg-[rgba(0,0,0,20%)] transition-opacity duration-300 ${
-          openModal
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        } flex justify-end`}
-      >
-        <div
-          className="w-[417px] h-[746px] bg-white flex flex-col"
-          ref={cartRef}
-        >
-          <div className="w-[85%] mx-auto pt-10">
-            {/* header of the cart */}
-            <div className="pr-4 flex justify-between items-center relative before:absolute before:bottom-0 before:h-[1px] before:bg-[#D9D9D9] before:w-3/4  pb-10">
-              <h6 className="font-semibold text-2xl">Shopping Cart</h6>
-              <button
-                className=""
-                onClick={() => {
-                  closeModal(false);
-                }}
-              >
-                <CloseIcon />
-              </button>
-            </div>
+      <div id="cart">
+        <SectionHeader title="Cart" />
+
+        <div className="flex flex-col gap-y-12  md:flex-row justify-between py-10 container mt-8">
+          {/* left side */}
+          <div className="w-full md:w-[817px]">
+            <table className="table-auto text-center w-full">
+              <thead className="bg-[#F9F1E7] h-[55px]">
+                <tr>
+                  <th className="hidden sm:table-cell"></th>
+                  <th>Product</th>
+                  <th>price</th>
+                  <th>Quantity</th>
+                  <th>Subtotal</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody className="">
+                {/* separator row */}
+                <tr className="h-12"></tr>
+                {/* end srparated row */}
+                <tr>
+                  <td className="size-[105px] hidden sm:table-cell">
+                    <div className="size-full bg-[#F9F1E7] flex justify-center items-center rounded-[10px]">
+                      <img src={img} alt="" />
+                    </div>
+                  </td>
+                  <td className="text-[#9F9F9F] ">Asgaard sofa</td>
+                  <td className="text-[#9F9F9F]">Rs. 250,000.00</td>
+                  {/* <td className="relative flex justify-center items-center before:flex before:items-center before:justify-center  before:border-[1px] before:border-[#9F9F9F]  before:content-['1'] "></td> */}
+                  <td>
+                    <span className="rounded-[5px] mx-auto flex justify-center items-center size-[32px] border-[1px] border-[#9F9F9F]">
+                      1
+                    </span>
+                  </td>
+                  <td>Rs. 250,000.00</td>
+                  <td className="text-[--gold] ">
+                    <button>
+                      <AntDesignDeleteFilled />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div className="flex flex-col justify-between  flex-grow">
-            {/* cart items (items and total price) */}
-            <div className="flex flex-col justify-between  pt-10 pb-6 h-full  w-[85%] mx-auto">
-              {/* items container */}
-              <div className="flex flex-col gap-y-4">
-                {/* item listing */}
-                <Link
-                  to={"/product"}
-                  className="flex justify-between items-center"
-                  onClick={() => {
-                    closeModal(false);
-                  }}
-                >
-                  {/* item img name price */}
-                  <div className="flex justify-between gap-x-8 items-center">
-                    {/* item img  */}
-                    <div className="bg-[rgba(184,142,47,0.22)] size-[105px] flex items-center rounded-[10px]">
-                      <img src={sofa} alt="sofa image" />
-                    </div>
-                    {/* name and price */}
-                    <div className="flex flex-col">
-                      <h6>Asgaard sofa</h6>
-                      <div className="flex justify-between gap-x-4 items-center mt-3">
-                        <p>1</p>
-                        <p>X</p>
-                        <p className="text-[--gold] text-xs font-medium">
-                          Rs. 250,000.00
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  {/* remove button */}
-                  <div className="size-5 bg-[#9F9F9F] flex justify-center items-center rounded-full text-white">
-                    <button>
-                      <MaterialSymbolsClose />
-                    </button>
-                  </div>
-                </Link>
-                <Link
-                  to={"/product"}
-                  onClick={() => {
-                    closeModal(false);
-                  }}
-                  className="flex justify-between items-center"
-                >
-                  {/* item img name price */}
-                  <div className="flex justify-between gap-x-8 items-center">
-                    {/* item img  */}
-                    <div className="bg-[rgba(184,142,47,0.22)] size-[105px] flex items-center rounded-[10px] overflow-hidden">
-                      <img
-                        src={sofa2}
-                        alt="sofa image"
-                        className="h-full w-full"
-                      />
-                    </div>
-                    {/* name and price */}
-                    <div className="flex flex-col">
-                      <h6>Casaliving Wood</h6>
-                      <div className="flex justify-between gap-x-4 items-center mt-3">
-                        <p>1</p>
-                        <p>X</p>
-                        <p className="text-[--gold] text-xs font-medium">
-                          Rs. 270,000.00
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  {/* remove button */}
-                  <div className="size-5 bg-[#9F9F9F] flex justify-center items-center rounded-full text-white">
-                    <button>
-                      <MaterialSymbolsClose />
-                    </button>
-                  </div>
-                </Link>
+
+          {/* right side total price */}
+          <div className="w-full md:size-[390px] text-center bg-[#F9F1E7] flex justify-center py-4">
+            <div className="w-[60%]">
+              <h6 className="text-[32px] font-semibold">Cart Totals</h6>
+              <div className="my-12">
+                <div className="flex justify-between items-center gap-x-8">
+                  <p className="font-medium">Subtotal</p>
+                  <p className="text-[#9F9F9F]">Rs. 250,000.00</p>
+                </div>
+                <div className="flex justify-between items-center gap-x-8 mt-8">
+                  <p className="font-medium">Total</p>
+                  <p className="font-medium text-xl text-[--gold]">
+                    Rs. 250,000.00
+                  </p>
+                </div>
               </div>
 
-              {/* Total price */}
-              <div className="w-4/5 flex justify-between">
-                <p>Subtotal</p>
-                <p className="text-[--gold] font-semibold">Rs. 520,000.00</p>
-              </div>
-            </div>
-            {/* price and checkout and Comparison */}
-            <div className="border-t-2 flex items-center">
-              <div className="w-[85%] mx-auto flex justify-between items-center py-6">
-                <Link
-                  to="/"
-                  className="px-7 h-[30px] border-2 border-black rounded-full flex items-center text-xs transition-colors duration-300 hover:bg-black hover:text-white"
-                >
-                  Cart
-                </Link>
-                <Link
-                  to="/"
-                  className="px-7 h-[30px] border-2 border-black rounded-full flex items-center text-xs  transition-colors duration-300 hover:bg-black hover:text-white"
-                >
-                  Checkout
-                </Link>
-                <Link
-                  to="/"
-                  className="px-7 h-[30px] border-2 border-black rounded-full flex items-center text-xs  transition-colors duration-300 hover:bg-black hover:text-white"
-                >
-                  Comparison
-                </Link>
-              </div>
+              <Link
+                to="/checkout"
+                className="w-full h-[60px] border-2 border-black rounded-[10px] flex items-center justify-center text-xl transition-colors duration-300 hover:bg-black hover:text-white"
+              >
+                Checkout
+              </Link>
             </div>
           </div>
         </div>
