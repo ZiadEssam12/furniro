@@ -58,6 +58,8 @@ export default function Checkout() {
 
   // getting states after selecting the country
   useEffect(() => {
+    setSelectedState(null);
+    setStates([]);
     if (selectedCountry) {
       axios
         .post(`https://countriesnow.space/api/v0.1/countries/states`, {
@@ -152,7 +154,7 @@ export default function Checkout() {
                     data={states}
                     value={selectedState}
                     setSelectedValue={setSelectedState}
-                    disabled={!selectedCountry}
+                    disabled={!states.length > 0}
                   />
                 </div>
 
