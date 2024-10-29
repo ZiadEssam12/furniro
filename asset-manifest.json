@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/furniro/static/css/main.7c345df9.css",
-    "main.js": "/furniro/static/js/main.1bb96b18.js",
+    "main.css": "/furniro/static/css/main.a6abeb38.css",
+    "main.js": "/furniro/static/js/main.82f7afe0.js",
     "static/js/453.272af363.chunk.js": "/furniro/static/js/453.272af363.chunk.js",
     "static/media/scandinavian-interior-mockup-wall-decal-background 1.png": "/furniro/static/media/scandinavian-interior-mockup-wall-decal-background 1.086fc87efbef518a9a08.png",
     "static/media/Images.png": "/furniro/static/media/Images.e873238ba26b5b19c215.png",
@@ -22,12 +22,12 @@
     "static/media/Asgaard sofa 6.png": "/furniro/static/media/Asgaard sofa 6.971ba5fd5c614e852f4a.png",
     "index.html": "/furniro/index.html",
     "static/media/compare-svgrepo-com 1.svg": "/furniro/static/media/compare-svgrepo-com 1.c335e09a0ca9db14c40bc3cf93450e30.svg",
-    "main.7c345df9.css.map": "/furniro/static/css/main.7c345df9.css.map",
-    "main.1bb96b18.js.map": "/furniro/static/js/main.1bb96b18.js.map",
+    "main.a6abeb38.css.map": "/furniro/static/css/main.a6abeb38.css.map",
+    "main.82f7afe0.js.map": "/furniro/static/js/main.82f7afe0.js.map",
     "453.272af363.chunk.js.map": "/furniro/static/js/453.272af363.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c345df9.css",
-    "static/js/main.1bb96b18.js"
+    "static/css/main.a6abeb38.css",
+    "static/js/main.82f7afe0.js"
   ]
 }
