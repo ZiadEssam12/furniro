@@ -26,7 +26,7 @@ const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Shop", href: "/shop", current: false },
   { name: "About", href: "#", current: false },
-  { name: "Contact", href: "#", current: false },
+  { name: "Contact", href: "/Contact", current: false },
 ];
 
 function classNames(...classes) {
@@ -56,7 +56,7 @@ export default function Header() {
                 />
               </DisclosureButton>
             </div>
-            <div className="flex flex-shrink-0 items-center ">
+            <Link to="/" className="flex flex-shrink-0 items-center ">
               <img
                 loading="lazy"
                 alt="furniro"
@@ -64,7 +64,7 @@ export default function Header() {
                 className="h-8 w-auto"
               />
               <p className="font-bold text-xl lg:text-[34px] ml-1">Furniro</p>
-            </div>
+            </Link>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-[0px] lg:space-x-[35px]">
                 {navigation.map((item) => (

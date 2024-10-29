@@ -14,6 +14,7 @@ import Layout from "./Components/Layout/Layout";
 import ProductInfo from "./Components/ProductInfo/ProductInfo";
 import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
+import Contact from "./Components/Contact/Contact";
 
 export default function App() {
   let routers = createHashRouter([
@@ -34,6 +35,10 @@ export default function App() {
         {
           path: "/checkout",
           element: <Checkout />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
         },
       ],
     },

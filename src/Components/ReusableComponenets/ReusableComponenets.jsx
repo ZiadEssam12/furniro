@@ -73,3 +73,19 @@ export function Dropdown({ title, value, setSelectedValue, data, disabled }) {
     </div>
   );
 }
+
+export function LableInput({ lable, id, placeHolder = "" }) {
+  return (
+    <>
+      <div className="flex flex-col gap-y-0 md:gap-y-4">
+        <label htmlFor={id}>{lable}</label>
+        <input
+          type="text"
+          id={id}
+          className="border-[1px] border-[--silver] w-full h-[50px] md:h-[75px] rounded-[10px] px-4"
+          placeholder={placeHolder}
+        />
+      </div>
+    </>
+  );
+}

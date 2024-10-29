@@ -71,13 +71,13 @@ export default function ShoppingCart({ openModal, closeModal }) {
           </div>
           <div className="flex flex-col justify-between  flex-grow">
             {/* cart items (items and total price) */}
-            <div className="flex flex-col justify-between  pt-10 pb-6 h-full  w-[85%] mx-auto">
+            <div className="flex flex-col justify-between  pt-10 pb-6 h-full">
               {/* items container */}
               <div className="flex flex-col gap-y-4">
                 {/* item listing */}
                 <Link
                   to={"/product"}
-                  className="flex justify-between items-center"
+                  className="flex justify-between items-center hover:bg-gray-50 px-10"
                   onClick={() => {
                     closeModal(false);
                   }}
@@ -112,7 +112,7 @@ export default function ShoppingCart({ openModal, closeModal }) {
                   onClick={() => {
                     closeModal(false);
                   }}
-                  className="flex justify-between items-center"
+                  className="flex justify-between items-center hover:bg-gray-50 px-10"
                 >
                   {/* item img name price */}
                   <div className="flex justify-between gap-x-8 items-center">
@@ -146,7 +146,7 @@ export default function ShoppingCart({ openModal, closeModal }) {
               </div>
 
               {/* Total price */}
-              <div className="w-4/5 flex justify-between">
+              <div className=" flex justify-between px-10">
                 <p>Subtotal</p>
                 <p className="text-[--gold] font-semibold">Rs. 520,000.00</p>
               </div>
