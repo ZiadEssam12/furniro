@@ -73,11 +73,11 @@ export default function ShoppingCart({ openModal, closeModal }) {
             {/* cart items (items and total price) */}
             <div className="flex flex-col justify-between  pt-10 pb-6 h-full">
               {/* items container */}
-              <div className="flex flex-col gap-y-4">
+              <div className="flex flex-col gap-y-1">
                 {/* item listing */}
                 <Link
                   to={"/product"}
-                  className="flex justify-between items-center hover:bg-gray-50 px-10"
+                  className="flex justify-between items-center hover:bg-gray-50 px-10 py-4"
                   onClick={() => {
                     closeModal(false);
                   }}
@@ -112,7 +112,7 @@ export default function ShoppingCart({ openModal, closeModal }) {
                   onClick={() => {
                     closeModal(false);
                   }}
-                  className="flex justify-between items-center hover:bg-gray-50 px-10"
+                  className="flex justify-between items-center hover:bg-gray-50 px-10 py-4"
                 >
                   {/* item img name price */}
                   <div className="flex justify-between gap-x-8 items-center">

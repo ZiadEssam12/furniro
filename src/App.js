@@ -15,6 +15,7 @@ import ProductInfo from "./Components/ProductInfo/ProductInfo";
 import Cart from "./Components/Cart/Cart";
 import Checkout from "./Components/Checkout/Checkout";
 import Contact from "./Components/Contact/Contact";
+import Blog from "./Components/Blog/Blog";
 
 export default function App() {
   let routers = createHashRouter([
@@ -39,6 +40,10 @@ export default function App() {
         {
           path: "/contact",
           element: <Contact />,
+        },
+        {
+          path: "/blog",
+          element: <Blog />,
         },
       ],
     },
