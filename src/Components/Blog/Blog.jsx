@@ -6,6 +6,10 @@ import img1 from "../../assets/Rectangle 68.png";
 import img2 from "../../assets/Rectangle 69.png";
 import img3 from "../../assets/Rectangle 70.png";
 import img4 from "../../assets/Rectangle 71.png";
+import img5 from "../../assets/Rectangle 72.png";
+import img6 from "../../assets/Rectangle 73.png";
+import img7 from "../../assets/Rectangle 74.png";
+import img8 from "../../assets/Rectangle 75.png";
 import SectionHeader from "../SectionHeader/SectionHeader";
 
 // img , title , data , date , author , category , description
@@ -45,7 +49,7 @@ export default function Blog() {
       <section>
         <SectionHeader title="Blog" />
 
-        <div className="my-28 px-8 md:px-0 container flex flex-col md:flex-row gap-y-8 justify-center gap-x-8">
+        <div className="relative my-10 md:my-28 px-8 md:px-0 container flex flex-col-reverse md:flex-row gap-y-1 md:gap-y-8 justify-center gap-x-8">
           {/* left side */}
           {/* posts */}
           <div className=" md:w-[817px] flex flex-col gap-y-12">
@@ -151,7 +155,7 @@ export default function Blog() {
             {/* end top part  */}
 
             {/* bottom part */}
-            <div className="w-full md:w-[311px] mx-auto px-0  md:px-8">
+            <div className="w-full md:w-[311px] hidden md:block mx-auto px-0  md:px-8">
               <h5 className="font-medium text-2xl">Recent Posts</h5>
 
               {/* recet posts */}
@@ -172,7 +176,7 @@ export default function Blog() {
                 <div className="flex gap-x-4 items-center">
                   <figure className="w-[80px] h-[80px] flex-grow-0">
                     <img
-                      src={img4}
+                      src={img5}
                       alt=""
                       className="h-[80px] w-[80px] rounded-[10px]"
                     />
@@ -185,7 +189,7 @@ export default function Blog() {
                 <div className="flex gap-x-4 items-center">
                   <figure className="w-[80px] h-[80px] flex-grow-0">
                     <img
-                      src={img4}
+                      src={img6}
                       alt=""
                       className="h-[80px] w-[80px] rounded-[10px]"
                     />
@@ -198,7 +202,7 @@ export default function Blog() {
                 <div className="flex gap-x-4 items-center">
                   <figure className="w-[80px] h-[80px] flex-grow-0">
                     <img
-                      src={img4}
+                      src={img7}
                       alt=""
                       className="h-[80px] w-[80px] rounded-[10px]"
                     />
@@ -211,7 +215,7 @@ export default function Blog() {
                 <div className="flex gap-x-4 items-center">
                   <figure className="w-[80px] h-[80px] flex-grow-0">
                     <img
-                      src={img4}
+                      src={img8}
                       alt=""
                       className="h-[80px] w-[80px] rounded-[10px]"
                     />

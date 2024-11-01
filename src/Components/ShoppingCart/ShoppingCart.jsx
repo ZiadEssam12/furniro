@@ -167,7 +167,7 @@ export default function ShoppingCart({ openModal, closeModal }) {
                   Checkout
                 </Link>
                 <Link
-                  to="/"
+                  to="/comparison"
                   className="px-7 h-[30px] border-2 border-black rounded-full flex items-center text-xs  transition-colors duration-300 hover:bg-black hover:text-white"
                 >
                   Comparison
