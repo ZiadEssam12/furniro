@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.css": "/furniro/static/css/main.a6abeb38.css",
-    "main.js": "/furniro/static/js/main.82f7afe0.js",
+    "main.css": "/furniro/static/css/main.40449b7a.css",
+    "main.js": "/furniro/static/js/main.b1ce0892.js",
     "static/js/453.272af363.chunk.js": "/furniro/static/js/453.272af363.chunk.js",
     "static/media/scandinavian-interior-mockup-wall-decal-background 1.png": "/furniro/static/media/scandinavian-interior-mockup-wall-decal-background 1.086fc87efbef518a9a08.png",
     "static/media/Images.png": "/furniro/static/media/Images.e873238ba26b5b19c215.png",
+    "static/media/Rectangle 68.png": "/furniro/static/media/Rectangle 68.2eb823aed74f2804337c.png",
+    "static/media/Rectangle 70.png": "/furniro/static/media/Rectangle 70.71666939d5add4f607d2.png",
+    "static/media/Rectangle 69.png": "/furniro/static/media/Rectangle 69.67d5f9eb1d8ed2427081.png",
     "static/media/Rectangle 1 blurred.png": "/furniro/static/media/Rectangle 1 blurred.183a57b542dd79340820.png",
     "static/media/living.png": "/furniro/static/media/living.59b44188dfff3238ac6e.png",
     "static/media/dining.png": "/furniro/static/media/dining.ecb17a469311755e933c.png",
@@ -20,14 +23,17 @@
     "static/media/image 1.png": "/furniro/static/media/image 1.3470388b6754d9d6bf7e.png",
     "static/media/Rectangle 26.png": "/furniro/static/media/Rectangle 26.39feca6e1653f7e1a06d.png",
     "static/media/Asgaard sofa 6.png": "/furniro/static/media/Asgaard sofa 6.971ba5fd5c614e852f4a.png",
+    "static/media/Rectangle 75.png": "/furniro/static/media/Rectangle 75.5e228e907e9e2fb6df7a.png",
+    "static/media/Rectangle 73.png": "/furniro/static/media/Rectangle 73.8b63b8d606c4574ae424.png",
+    "static/media/Rectangle 71.png": "/furniro/static/media/Rectangle 71.244413b245fb44913cdf.png",
     "index.html": "/furniro/index.html",
     "static/media/compare-svgrepo-com 1.svg": "/furniro/static/media/compare-svgrepo-com 1.c335e09a0ca9db14c40bc3cf93450e30.svg",
-    "main.a6abeb38.css.map": "/furniro/static/css/main.a6abeb38.css.map",
-    "main.82f7afe0.js.map": "/furniro/static/js/main.82f7afe0.js.map",
+    "main.40449b7a.css.map": "/furniro/static/css/main.40449b7a.css.map",
+    "main.b1ce0892.js.map": "/furniro/static/js/main.b1ce0892.js.map",
     "453.272af363.chunk.js.map": "/furniro/static/js/453.272af363.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6abeb38.css",
-    "static/js/main.82f7afe0.js"
+    "static/css/main.40449b7a.css",
+    "static/js/main.b1ce0892.js"
   ]
 }
