@@ -198,9 +198,32 @@ export default function Footer() {
               </button>
             </div>
           </div>
-        </div>
+        </div>{" "}
         <div className="container border-t-2 mt-10 mx-auto px-6 md:px-0">
-          <p className="py-6">2023 furino. All rights reverved</p>
+          <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center py-6">
+            <p className="mb-2 md:mb-0">2023 furino. All rights reverved</p>
+            <p className="text-sm text-[#9F9F9F]">
+              Design by{" "}
+              <a
+                href="https://www.linkedin.com/in/aashifasheikh12"
+                className="text-[#B88E2F] hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Aashifa Sheikh
+              </a>{" "}
+              from Figma Community, used under{" "}
+              <a
+                href="https://creativecommons.org/licenses/by/4.0/"
+                className="text-[#B88E2F] hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CC BY 4.0
+              </a>
+              . Modified by <span className="text-[#B88E2F]">Ziad Essam</span>.
+            </p>
+          </div>
         </div>
       </div>
     </>
